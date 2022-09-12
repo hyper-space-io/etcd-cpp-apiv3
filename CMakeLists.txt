@@ -54,7 +54,7 @@ endmacro(use_cxx11)
 # ensure C++11
 use_cxx11()
 
-find_package(Boost 1.66.0 REQUIRED COMPONENTS system thread random)
+find_package(Boost REQUIRED COMPONENTS system thread random)
 if(APPLE)
     # If we're on OS X check for Homebrew's copy of OpenSSL instead of Apple's
     if(NOT OpenSSL_DIR)
@@ -118,6 +118,8 @@ include_directories(SYSTEM ${Boost_INCLUDE_DIR}
                            ${PROTOBUF_INCLUDE_DIRS}
                            ${OPENSSL_INCLUDE_DIR})
 link_directories(SYSTEM ${Boost_LIBRARY_DIRS})
+target_link_libraries(SYSTEM ${Boost_LIBRARIES})
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     if(ETCD_W_STRICT)
