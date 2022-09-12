@@ -117,6 +117,7 @@ include_directories(SYSTEM ${Boost_INCLUDE_DIR}
                            ${CPPREST_INCLUDE_DIR}
                            ${PROTOBUF_INCLUDE_DIRS}
                            ${OPENSSL_INCLUDE_DIR})
+link_directories(SYSTEM ${Boost_LIBRARY_DIRS})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     if(ETCD_W_STRICT)
