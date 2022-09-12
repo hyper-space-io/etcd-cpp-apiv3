@@ -54,7 +54,7 @@ endmacro(use_cxx11)
 # ensure C++11
 use_cxx11()
 
-find_package(Boost REQUIRED COMPONENTS system thread random)
+find_package(Boost 1.66.0 REQUIRED COMPONENTS system thread random)
 if(APPLE)
     # If we're on OS X check for Homebrew's copy of OpenSSL instead of Apple's
     if(NOT OpenSSL_DIR)
